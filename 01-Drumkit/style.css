@@ -2,7 +2,7 @@
   border: 2px solid white;
   border-radius: 5px;
   background-color: rgba(9, 87, 88, 0.9);
-  transition: all 0.57s;
+  transition: all 0.07s;
   padding: 10px;
   margin: 10px;
 }
@@ -30,4 +30,8 @@ body {
 
 .corps {
   width: 100%;
+}
+
+h1 {
+  font-size: 40px;
 }

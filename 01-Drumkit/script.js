@@ -7,12 +7,12 @@ function playSound(e) {
   key.classList.add("playing"); //add a class to the key downed
 }
 
-// function removeTransition(e) {
-//   if (e.propertyName !== "transition") return;
-//   this.classList.remove("playing");
-// }
+function removeTransition(e) {
+  if (e.propertyName !== "transition") return;
+  this.classList.remove("playing");
+}
 
-// const keys = document.querySelectorAll(".key");
-// keys.forEach(key => key.addEventListener("transitionend", removeTransition));
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => key.addEventListener("transitionend", removeTransition));
 
 window.addEventListener("keydown", playSound);
