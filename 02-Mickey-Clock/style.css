@@ -14,10 +14,10 @@ body {
 }
 
 .mickey {
-  width: 100px;
+  width: 80px;
   position: absolute;
-  top: 34%;
-  left: 37%;
+  top: 36%;
+  left: 39%;
   z-index: 1;
 }
 
@@ -29,8 +29,7 @@ body {
   margin: 50px auto;
   position: relative;
   padding: 2rem;
-  box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 3px #efefef inset 0 0 0 10px black0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef inset 0 0 0 10px black0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .clock-face {
