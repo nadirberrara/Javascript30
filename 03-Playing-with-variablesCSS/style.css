@@ -6,18 +6,23 @@ html {
 }
 
 :root {
-  --base: #ffc600;
-  --spacing: 10px;
-  --blur: 2px;
+  --base-bg: #ffc600;
+  --base-col: #ffffff;
+  --spacingX: 0px;
+  --spacingY: 10px;
+  --blur: 0px;
+  --width: 30%;
 }
 
 img {
-  width: 40%;
   position: fixed;
-  padding: var(--spacing);
+  margin-left: var(--spacingX);
+  margin-top: var(--spacingY);
+  width: var(--width);
   filter: blur(var(--blur));
 }
 
 h2 {
-  background: var(--base);
+  background: var(--base-bg);
+  color: var(--base-col);
 }
