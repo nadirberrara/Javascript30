@@ -16,6 +16,8 @@ html {
 
 img {
   position: fixed;
+  width: 30%;
+  left: 20vh;
   margin-left: var(--spacingX);
   margin-top: var(--spacingY);
   width: var(--width);
