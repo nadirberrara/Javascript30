@@ -1,7 +1,5 @@
 const keys = Array.from(document.querySelectorAll(".key"));
-const wave = document.querySelector(".wave2")
-
-keys.forEach(key => key.addEventListener("transitionend", removeTransition));
+const wave = document.querySelector(".wave2");
 
 function playSound(e) {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -10,18 +8,14 @@ function playSound(e) {
   key.classList.add("playing"); //add a class to the key downed
   wave.classList.remove("wave-visible");
 
-  setTimeout(function () {
-    wave.classList.add("wave-visible")
+  setTimeout(function() {
+    // affiche le gif soundwave et retire la transition
+    wave.classList.add("wave-visible");
+    key.classList.remove("playing");
   }, 2000);
 
   audio.currentTime = 0; // permet d'enchainer les touches
   audio.play();
-}
-
-
-function removeTransition(key) {
-  if (key.propertyName !== "transform") return;
-  key.classList.remove("playing");
 }
 
 window.addEventListener("keydown", playSound);
