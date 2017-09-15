@@ -1,0 +1,23 @@
+html {
+  background-image: url("assets/paris.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 2px;
+}
+
+img {
+  width: 40%;
+  position: fixed;
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+}
+
+h2 {
+  background: var(--base);
+}
