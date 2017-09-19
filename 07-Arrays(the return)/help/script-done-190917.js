@@ -136,25 +136,117 @@ const people = [
 
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
+console.log("---------Iteration 1");
+const born1500 = inventors.filter(
+  inventor => inventor.year > 1499 && inventor.year < 1700
+);
+console.table(born1500);
+const lookingForMarie = inventors.filter(
+  inventor => inventor.first === "Marie"
+);
+console.table(lookingForMarie);
+const firstG = inventors.filter(inventor => inventor.last[0] === "G");
+console.table(firstG);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors' first and last names
+console.log("---------Iteration 2");
+const fullName = inventors.map(
+  inventor =>
+    inventor.first + " " + inventor.last + " was born in " + inventor.year + "."
+);
+console.log(fullName);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+console.log("---------Iteration 3");
+// const bornLast = inventors.sort(function (a, b) {
+//   if (a.year > b.year) {
+//     return -1
+//   } else {
+//     return 1
+//   }
+// })
+const bornLast = inventors.sort((a, b) => (a.year > b.year ? -1 : 1));
+console.table(bornLast);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
+console.log("---------Iteration 4");
+
+const totalWeight = inventors.reduce(function(total, inventor) {
+  return total + inventor.weight;
+}, 0);
+console.log(totalWeight + " is the weight of all the inventors");
+
+const totalYear = inventors.reduce(function(total, inventor) {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log("All the inventors lived together for " + totalYear + " years.");
 
 // 5. Sort the inventors by years lived
+console.log("---------Iteration 5");
+const older = inventors.sort(function(a, b) {
+  if (a.passed - a.year > b.passed - b.year) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+console.table(older);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+console.log("---------Iteration 7");
+const alpha = inventors.sort(function(a, b) {
+  if (a.last[0] < b.last[0]) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+console.table(alpha);
+
+console.log("---------Iteration 7.2");
+const alphaPeople = people.sort(function(a, b) {
+  const [aLast, aFirst] = a.split(", "); //destructuration pour acceder à toutes les valeurs
+  const [bLast, bFirst] = b.split(", ");
+  return aLast > bLast ? 1 : -1;
+});
+console.log(alphaPeople);
 
 const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck",
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck",
   "car",
   "car",
   "truck",
@@ -173,6 +265,15 @@ const data = [
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
+console.log("---------Iteration 8");
+const move = data.reduce(function(total, item) {
+  if (!total[item]) {
+    total[item] = 0;
+  }
+  total[item]++;
+  return total;
+}, {});
+console.log(move);
 
 const people2 = [
   {
@@ -215,17 +316,40 @@ const comments = [
   }
 ];
 
-// _________________________________________________________
+// 09 _________________________________________________________
+// Array.prototype.some() // is at least one person 19 or older?
 // Array.prototype.every() // is everyone 19 or older?
+console.log("---------Iteration 9");
+// const date = new Date();
+// const yearDate = date.getFullYear();
 
-// _________________________________________________________
+const oneAdult = people2.some(
+  people => new Date().getFullYear() - people.year >= 19
+);
+console.log(oneAdult);
+
+const allAdults = people2.every(
+  people => new Date().getFullYear() - people.year >= 19
+);
+console.log(allAdults);
+
+console.log("---------Iteration 10");
+// 10 _________________________________________________________
 // Array.prototype.find()
-// Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
+const thisComment = comments.find(comment => comment.id === 823423);
+console.log(thisComment);
 
-// _________________________________________________________
+console.log("---------Iteration 11");
+// 11 _________________________________________________________
 // Array.prototype.findIndex()
 // Find the comment with this ID
+const indexComment = comments.findIndex(comment => comment.id === 823423);
+console.log(indexComment);
 
-// _________________________________________________________
+console.log("---------Iteration 12");
+// 12 _________________________________________________________
 // delete the comment with the ID of 823423
+console.table(comments);
+comments.splice(1, 1);
+console.table(comments);
