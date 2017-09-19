@@ -8,6 +8,10 @@ Please enjoy :
 03 - Paris architecture
 04 - Practice (arrays)
 05 - Meet the A-team
-06 -
-07 -
+06 - USA population
+07 - Practice (arrays, the return)
+08 - …
+09 - … 
+10 - … 
+
 
